@@ -4,25 +4,25 @@ const SITE_NAME = 'Ndjoka';
 
 export const SEO_CONFIG = {
   home: {
-    title: 'Ndjoka | Produits agroalimentaires africains et réseau de distribution',
+    title: 'Ndjoka Cameroun | Chips de Plantain, Kilichi & Produits Africains | Distributeur & Revendeur',
     description:
-      "Découvrez Ndjoka, une marque agroalimentaire africaine qui développe des produits appréciés et un réseau de distribution en pleine expansion.",
+      "Ndjoka Cameroun : chips de plantain mûr, non mûr et épicé, Kilichi et produits agroalimentaires africains. Trouvez nos points de vente, devenez distributeur ou revendeur Ndjoka. Chips de plantain Cameroun de qualité premium.",
     url: `${BASE_URL}/`,
     image: OG_IMAGE,
     robots: 'index,follow',
   },
   produits: {
-    title: 'Produits Ndjoka | Chips de plantain et Kilichi',
+    title: 'Produits Ndjoka | Chips de Plantain Mûr, Non Mûr, Épicé & Kilichi Cameroun',
     description:
-      "Découvrez les produits Ndjoka : chips de plantain et Kilichi, conçus pour offrir une expérience authentique et gourmande.",
+      "Produits Ndjoka Cameroun : chips de plantain mûr, chips de plantain non mûr, chips de plantain épicées et Kilichi traditionnel. Snacks africains de qualité premium fabriqués au Cameroun.",
     url: `${BASE_URL}/produits`,
     image: OG_IMAGE,
     robots: 'index,follow',
   },
   concessionnaires: {
-    title: "Devenir concessionnaire Ndjoka | Opportunité de distribution agroalimentaire",
+    title: "Devenir Distributeur Ndjoka | Revendeur Chips Plantain & Kilichi Cameroun",
     description:
-      "Rejoignez le réseau Ndjoka et développez votre activité avec une marque agroalimentaire africaine en croissance.",
+      "Devenir distributeur ou revendeur Ndjoka : chips de plantain et Kilichi Cameroun. Rejoignez notre réseau de points de vente et développez votre activité avec des produits africains de qualité.",
     url: `${BASE_URL}/concessionnaires`,
     image: OG_IMAGE,
     robots: 'index,follow',
@@ -36,9 +36,9 @@ export const SEO_CONFIG = {
     robots: 'index,follow',
   },
   'nos-points-de-vente': {
-    title: 'Nos points de vente Ndjoka | Réseau de distribution et distributeurs',
+    title: 'Points de Vente Ndjoka | Distributeur Chips Plantain & Kilichi Cameroun',
     description:
-      "Découvrez les points de vente Ndjoka présents dans plus de 10 pays. Trouvez un distributeur près de chez vous et rejoignez une marque agroalimentaire africaine en pleine expansion.",
+      "Trouvez les points de vente Ndjoka près de chez vous : distributeurs de chips de plantain et Kilichi au Cameroun et dans plus de 10 pays. Réseau de distribution Ndjoka en Afrique et diaspora.",
     url: `${BASE_URL}/nos-points-de-vente`,
     image: OG_IMAGE,
     robots: 'index,follow',
@@ -123,7 +123,7 @@ export function applySeo(key) {
     url: BASE_URL,
     logo: OG_IMAGE,
     description:
-      'Ndjoka est une marque agroalimentaire africaine spécialisée dans la transformation et la distribution de produits alimentaires africains, notamment les chips de plantain et le Kilichi.',
+      'Ndjoka est une marque agroalimentaire africaine spécialisée dans la transformation et la distribution de produits alimentaires africains : chips de plantain mûr, chips de plantain non mûr, chips de plantain épicées et Kilichi. Produits Ndjoka fabriqués au Cameroun avec des points de vente dans plus de 10 pays.',
     sameAs: [
       'https://youtube.com/@startupacademy237?si=-DlBa9gwkMR3YAui',
       'https://www.facebook.com/share/19EXzED1ww/',
@@ -299,13 +299,23 @@ function applySchemaPage(key, config) {
       mainEntity: [
         {
           '@type': 'Question',
-          name: 'Comment devenir concessionnaire Ndjoka ?',
-          acceptedAnswer: { '@type': 'Answer', text: "Il suffit de remplir le formulaire de candidature pour être contacté par notre équipe." },
+          name: 'Comment devenir distributeur ou revendeur Ndjoka ?',
+          acceptedAnswer: { '@type': 'Answer', text: "Pour devenir distributeur ou revendeur Ndjoka, il suffit de remplir le formulaire de candidature sur notre site. Vous serez contacté par notre équipe pour rejoindre notre réseau de points de vente au Cameroun et en Afrique." },
+        },
+        {
+          '@type': 'Question',
+          name: "Où trouver les produits Ndjoka au Cameroun ?",
+          acceptedAnswer: { '@type': 'Answer', text: "Les produits Ndjoka (chips de plantain et Kilichi) sont disponibles dans nos points de vente au Cameroun : Yaoundé, Douala, Bafoussam, Dschang et plus de 15 villes. Consultez notre page points de vente pour trouver un distributeur Ndjoka près de chez vous." },
+        },
+        {
+          '@type': 'Question',
+          name: "Quels sont les produits Ndjoka disponibles ?",
+          acceptedAnswer: { '@type': 'Answer', text: "Ndjoka propose des chips de plantain mûr, chips de plantain non mûr, chips de plantain épicées et du Kilichi traditionnel. Tous nos produits sont fabriqués au Cameroun avec des ingrédients de qualité." },
         },
         {
           '@type': 'Question',
           name: "Pourquoi investir dans Ndjoka ?",
-          acceptedAnswer: { '@type': 'Answer', text: "Parce que Ndjoka construit une marque agroalimentaire africaine avec une vision de croissance et de distribution internationale." },
+          acceptedAnswer: { '@type': 'Answer', text: "Ndjoka est une marque agroalimentaire africaine en pleine croissance avec un réseau de distribution dans plus de 10 pays et une vision de croissance internationale. Investir dans Ndjoka, c'est participer au développement d'une entreprise camerounaise ambitieuse." },
         },
       ],
     });

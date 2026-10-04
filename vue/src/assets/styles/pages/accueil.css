@@ -26,10 +26,13 @@
   overflow: hidden;
   background:
     radial-gradient(circle at 50% 46%, rgba(246, 241, 231, 0.98) 0%, rgba(244, 231, 200, 0.95) 20%, rgba(244, 231, 200, 0.56) 34%, rgba(31, 94, 59, 0) 58%),
-    radial-gradient(circle at 14% 18%, rgba(217, 140, 43, 0.18), transparent 24%),
-    radial-gradient(circle at 84% 18%, rgba(23, 50, 77, 0.22), transparent 26%),
-    linear-gradient(118deg, #f6f1e7 0%, #e9dfc8 32%, #1f4b3f 74%, #17324d 100%);
+    radial-gradient(circle at 14% 18%, rgba(217, 140, 43, 0.22), transparent 28%),
+    radial-gradient(circle at 84% 18%, rgba(23, 50, 77, 0.26), transparent 30%),
+    radial-gradient(circle at 72% 88%, rgba(242, 178, 51, 0.18), transparent 24%),
+    radial-gradient(circle at 25% 85%, rgba(31, 94, 59, 0.12), transparent 22%),
+    linear-gradient(125deg, #f6f1e7 0%, #e9dfc8 28%, #d4c5a0 48%, #1f5e3b 78%, #17324d 100%);
   isolation: isolate;
+  animation: accueilHeroBackgroundShift 20s ease-in-out infinite alternate;
 }
 
 .accueilHero-backdrop,
@@ -42,44 +45,69 @@
 .accueilHero-backdrop {
   inset: 0;
   background:
-    radial-gradient(circle at 50% 42%, rgba(255, 255, 255, 0.2), transparent 24%),
-    radial-gradient(circle at 23% 72%, rgba(217, 140, 43, 0.12), transparent 18%),
-    radial-gradient(circle at 82% 66%, rgba(31, 94, 59, 0.12), transparent 22%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 34%);
+    radial-gradient(circle at 50% 42%, rgba(255, 255, 255, 0.28), transparent 28%),
+    radial-gradient(circle at 23% 72%, rgba(217, 140, 43, 0.16), transparent 22%),
+    radial-gradient(circle at 82% 66%, rgba(31, 94, 59, 0.16), transparent 26%),
+    radial-gradient(circle at 15% 35%, rgba(242, 178, 51, 0.12), transparent 18%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.12), transparent 38%);
+  animation: accueilHeroBackdropPulse 15s ease-in-out infinite;
+}
+
+.accueilHero-backdrop::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.18;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(31, 94, 59, 0.03) 2px, rgba(31, 94, 59, 0.03) 4px),
+    repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(217, 140, 43, 0.03) 2px, rgba(217, 140, 43, 0.03) 4px);
+  background-size: 40px 40px;
+  mix-blend-mode: overlay;
+  animation: accueilHeroGridMove 30s linear infinite;
 }
 
 .accueilHero-backdrop::after {
   content: '';
   position: absolute;
   inset: 0;
-  opacity: 0.14;
+  opacity: 0.18;
   background-image:
+    radial-gradient(circle at 18% 22%, rgba(242, 178, 51, 0.5) 0%, transparent 3px),
+    radial-gradient(circle at 42% 12%, rgba(31, 94, 59, 0.45) 0%, transparent 2.5px),
+    radial-gradient(circle at 68% 18%, rgba(217, 140, 43, 0.48) 0%, transparent 3px),
+    radial-gradient(circle at 88% 35%, rgba(242, 178, 51, 0.42) 0%, transparent 2.5px),
+    radial-gradient(circle at 12% 58%, rgba(31, 94, 59, 0.46) 0%, transparent 3px),
+    radial-gradient(circle at 52% 68%, rgba(217, 140, 43, 0.5) 0%, transparent 3px),
+    radial-gradient(circle at 82% 78%, rgba(242, 178, 51, 0.45) 0%, transparent 2.5px),
+    radial-gradient(circle at 32% 45%, rgba(31, 94, 59, 0.43) 0%, transparent 2.5px),
     linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  background-size: 16px 16px;
-  mix-blend-mode: soft-light;
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 16px 16px, 16px 16px;
+  mix-blend-mode: screen;
+  animation: accueilHeroParticleFloat 45s linear infinite;
 }
 
 .accueilHero-glow {
-  width: 26rem;
-  height: 26rem;
+  width: 28rem;
+  height: 28rem;
   border-radius: 50%;
-  filter: blur(72px);
-  opacity: 0.72;
-  animation: accueilHeroDrift 13s ease-in-out infinite;
+  filter: blur(80px);
+  opacity: 0.82;
+  animation: accueilHeroDrift 16s ease-in-out infinite;
+  mix-blend-mode: screen;
 }
 
 .accueilHero-glow--primary {
-  top: 10%;
-  left: 10%;
-  background: rgba(217, 140, 43, 0.2);
+  top: 8%;
+  left: 8%;
+  background: radial-gradient(circle, rgba(217, 140, 43, 0.32), rgba(242, 178, 51, 0.18));
 }
 
 .accueilHero-glow--secondary {
-  right: 8%;
-  bottom: 14%;
-  background: rgba(23, 50, 77, 0.18);
-  animation-delay: -5s;
+  right: 6%;
+  bottom: 12%;
+  background: radial-gradient(circle, rgba(23, 50, 77, 0.28), rgba(31, 94, 59, 0.16));
+  animation-delay: -6s;
 }
 
 .accueilHero-visual {
@@ -99,11 +127,12 @@
   inset: 12% 10%;
   border-radius: 50%;
   background:
-    radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent 38%),
-    radial-gradient(circle at 56% 54%, rgba(217, 140, 43, 0.16), transparent 58%);
-  filter: blur(26px);
+    radial-gradient(circle, rgba(255, 255, 255, 0.28), transparent 42%),
+    radial-gradient(circle at 56% 54%, rgba(217, 140, 43, 0.22), transparent 64%);
+  filter: blur(32px);
   opacity: 0.95;
   z-index: -1;
+  animation: accueilHeroMediaGlow 8s ease-in-out infinite alternate;
 }
 
 .accueilHero-media--chips {
@@ -132,9 +161,15 @@
   height: 100%;
   object-fit: contain;
   filter:
-    drop-shadow(0 28px 48px rgba(31, 75, 63, 0.22))
-    drop-shadow(0 6px 24px rgba(217, 140, 43, 0.18));
+    drop-shadow(0 32px 56px rgba(31, 75, 63, 0.28))
+    drop-shadow(0 8px 28px rgba(217, 140, 43, 0.24))
+    drop-shadow(0 2px 8px rgba(0, 0, 0, 0.12));
   animation: accueilHeroFloat 11s ease-in-out infinite;
+  transition: transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.accueilHero-media:hover .accueilHero-mediaImage {
+  transform: translateY(-12px) scale(1.05) rotate(2deg);
 }
 
 .accueilHero-media--drink .accueilHero-mediaImage {
@@ -170,18 +205,30 @@
   padding: clamp(2rem, 5vw, 3rem) clamp(1rem, 3vw, 2rem);
   text-align: center;
   color: var(--color-primary-900);
-  animation: accueilHeroTextReveal 1100ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: accueilHeroTextReveal 1200ms cubic-bezier(0.22, 1, 0.36, 1) both;
   animation-delay: 80ms;
 }
 
 .accueilHero-content::before {
   content: '';
   position: absolute;
-  inset: -16% -12%;
+  inset: -18% -14%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(246, 241, 231, 0.88), rgba(246, 241, 231, 0.42) 48%, transparent 74%);
-  filter: blur(32px);
+  background: 
+    radial-gradient(circle, rgba(246, 241, 231, 0.92), rgba(246, 241, 231, 0.48) 52%, transparent 78%),
+    radial-gradient(circle at 65% 35%, rgba(242, 178, 51, 0.08), transparent 48%);
+  filter: blur(40px);
   z-index: -1;
+  animation: accueilHeroContentGlow 10s ease-in-out infinite alternate;
+}
+
+.accueilHero-content::after {
+  content: '';
+  position: absolute;
+  inset: -8% -10%;
+  border-radius: 50%;
+  border: 1px solid rgba(217, 140, 43, 0.12);
+  animation: accueilHeroContentRing 12s linear infinite;
 }
 
 .accueilHero-eyebrow,
@@ -204,6 +251,19 @@
 .accueilSection-eyebrow {
   background: rgba(31, 94, 59, 0.08);
   color: var(--color-primary-800);
+  position: relative;
+  overflow: hidden;
+}
+
+.accueilSection-eyebrow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(217, 140, 43, 0.15), transparent);
+  animation: accueilEyebrowShimmer 3s ease-in-out infinite;
 }
 
 .accueilSection-eyebrow--light {
@@ -218,8 +278,15 @@
   letter-spacing: -0.05em;
   line-height: 0.96;
   text-shadow:
-    0 2px 32px rgba(31, 75, 63, 0.12),
-    0 0 80px rgba(217, 140, 43, 0.08);
+    0 3px 40px rgba(31, 75, 63, 0.16),
+    0 1px 12px rgba(217, 140, 43, 0.12),
+    0 0 100px rgba(242, 178, 51, 0.08);
+  animation: accueilHeroTitleShine 8s ease-in-out infinite;
+  background: linear-gradient(135deg, #1f5e3b 0%, #2d7a52 30%, #d98c2b 50%, #2d7a52 70%, #1f5e3b 100%);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .accueilHero-description,
@@ -271,29 +338,69 @@
 }
 
 .accueilButton--primary {
-  background: #d98c2b;
+  background: linear-gradient(135deg, #d98c2b 0%, #f2b233 50%, #d98c2b 100%);
+  background-size: 200% 200%;
   color: var(--color-white);
-  box-shadow: 0 14px 28px rgba(217, 140, 43, 0.24);
+  box-shadow: 
+    0 16px 32px rgba(217, 140, 43, 0.28),
+    0 4px 12px rgba(242, 178, 51, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.accueilButton--primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transform: translateX(-100%);
+  transition: transform 600ms ease;
+}
+
+.accueilButton--primary:hover::before {
+  transform: translateX(100%);
 }
 
 .accueilButton--primary:hover,
 .accueilButton--primary:focus-visible {
-  transform: translateY(-3px) scale(1.01);
-  background: var(--color-accent-500);
-  box-shadow: 0 22px 44px rgba(242, 178, 51, 0.36);
+  transform: translateY(-4px) scale(1.02);
+  background-position: 100% 50%;
+  box-shadow: 
+    0 24px 48px rgba(242, 178, 51, 0.42),
+    0 8px 20px rgba(217, 140, 43, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  animation: accueilButtonPulse 1.5s ease-in-out infinite;
 }
 
 .accueilButton--secondary {
-  border: 1px solid rgba(31, 94, 59, 0.24);
+  border: 1.5px solid rgba(31, 94, 59, 0.28);
   color: var(--color-primary-800);
-  background: transparent;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  position: relative;
+  overflow: hidden;
+}
+
+.accueilButton--secondary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(31, 94, 59, 0.06), rgba(217, 140, 43, 0.04));
+  opacity: 0;
+  transition: opacity 400ms ease;
+}
+
+.accueilButton--secondary:hover::before {
+  opacity: 1;
 }
 
 .accueilButton--secondary:hover,
 .accueilButton--secondary:focus-visible {
-  transform: translateY(-3px);
-  border-color: rgba(31, 94, 59, 0.42);
-  background: rgba(31, 94, 59, 0.05);
+  transform: translateY(-4px);
+  border-color: rgba(31, 94, 59, 0.48);
+  background: rgba(31, 94, 59, 0.08);
+  box-shadow: 0 12px 28px rgba(31, 94, 59, 0.16);
 }
 
 .accueilHero-actions .accueilButton--primary {
@@ -343,6 +450,31 @@
 
 .accueilSection-title {
   max-width: 14ch;
+  position: relative;
+}
+
+.accueilSection-title::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 4rem;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-accent-600), transparent);
+  border-radius: 2px;
+  opacity: 0;
+  transition: 
+    width 600ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 600ms ease;
+}
+
+.accueilAbout-copy:hover .accueilSection-title::after,
+.accueilProducts-headingCopy:hover .accueilSection-title::after,
+.accueilBenefits-heading:hover .accueilSection-title::after,
+.accueilPresence-heading:hover .accueilSection-title::after,
+.accueilFaq-heading:hover .accueilSection-title::after {
+  opacity: 1;
+  width: 6rem;
 }
 
 .accueilSection-title--light,
@@ -362,6 +494,19 @@
   border-radius: 1.75rem;
   overflow: hidden;
   background: linear-gradient(180deg, rgba(244, 231, 200, 0.46), rgba(255, 255, 255, 0.16));
+  box-shadow: 
+    0 24px 48px rgba(31, 94, 59, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transition: 
+    transform 600ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.accueilAbout-shell:hover .accueilAbout-media {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 
+    0 32px 64px rgba(31, 94, 59, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
 .accueilAbout-media::after {
@@ -369,6 +514,25 @@
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg, transparent, rgba(22, 56, 36, 0.12));
+}
+
+.accueilAbout-media::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: 
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.4) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 800ms ease;
+  pointer-events: none;
+}
+
+.accueilAbout-shell:hover .accueilAbout-media::before {
+  opacity: 0.3;
+  animation: accueilAboutMediaShine 2s ease-in-out;
 }
 
 .accueilAbout-image {
@@ -381,7 +545,7 @@
   position: relative;
   padding-block: 5rem;
   overflow: clip;
-  background: linear-gradient(180deg, rgba(244, 231, 200, 0.16), transparent 34%);
+  background: linear-gradient(180deg, rgba(244, 231, 200, 0.2), transparent 38%, rgba(255, 255, 255, 0.08) 100%);
 }
 
 .accueilProducts-root::before,
@@ -389,27 +553,27 @@
   content: '';
   position: absolute;
   border-radius: 50%;
-  filter: blur(60px);
+  filter: blur(72px);
   pointer-events: none;
-  opacity: 0.38;
-  animation: accueilDrift 16s ease-in-out infinite;
+  opacity: 0.42;
+  animation: accueilDriftEnhanced 18s ease-in-out infinite;
 }
 
 .accueilProducts-root::before {
-  top: 14%;
-  left: -6rem;
-  width: 18rem;
-  height: 18rem;
-  background: rgba(242, 178, 51, 0.12);
+  top: 12%;
+  left: -8rem;
+  width: 22rem;
+  height: 22rem;
+  background: radial-gradient(circle, rgba(242, 178, 51, 0.18), rgba(217, 140, 43, 0.08));
 }
 
 .accueilProducts-root::after {
-  right: -8rem;
-  bottom: 12%;
-  width: 20rem;
-  height: 20rem;
-  background: rgba(31, 94, 59, 0.1);
-  animation-delay: -6s;
+  right: -10rem;
+  bottom: 10%;
+  width: 24rem;
+  height: 24rem;
+  background: radial-gradient(circle, rgba(31, 94, 59, 0.14), rgba(23, 50, 77, 0.06));
+  animation-delay: -7s;
 }
 
 .accueilProducts-shell {
@@ -435,7 +599,27 @@
   display: grid;
   gap: 1.6rem;
   padding: 0;
-  animation: accueilRevealEditorial 700ms ease both;
+  animation: accueilRevealEditorial 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.accueilProducts-item::before {
+  content: '';
+  position: absolute;
+  inset: -2rem;
+  border-radius: 2rem;
+  background: radial-gradient(circle at 50% 50%, rgba(242, 178, 51, 0.04), transparent 70%);
+  opacity: 0;
+  transition: opacity 600ms ease;
+  pointer-events: none;
+}
+
+.accueilProducts-item:hover::before {
+  opacity: 1;
+}
+
+.accueilProducts-item:hover {
+  transform: translateY(-8px);
 }
 
 .accueilProducts-item:nth-child(2) {
@@ -461,20 +645,31 @@
   content: '';
   position: absolute;
   pointer-events: none;
+  transition: all 800ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .accueilProducts-media::before {
   inset: 18% 8% 12%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(242, 178, 51, 0.18), transparent 62%);
-  filter: blur(26px);
+  background: radial-gradient(circle, rgba(242, 178, 51, 0.22), transparent 66%);
+  filter: blur(32px);
 }
 
 .accueilProducts-media::after {
   inset: 10% 14%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(31, 94, 59, 0.1), transparent 68%);
-  filter: blur(30px);
+  background: radial-gradient(circle, rgba(31, 94, 59, 0.14), transparent 72%);
+  filter: blur(36px);
+}
+
+.accueilProducts-item:hover .accueilProducts-media::before {
+  filter: blur(40px);
+  background: radial-gradient(circle, rgba(242, 178, 51, 0.32), transparent 66%);
+}
+
+.accueilProducts-item:hover .accueilProducts-media::after {
+  filter: blur(44px);
+  background: radial-gradient(circle, rgba(31, 94, 59, 0.20), transparent 72%);
 }
 
 .accueilProducts-image {
@@ -482,19 +677,41 @@
   height: 100%;
   object-fit: contain;
   padding: 1rem;
-  filter: drop-shadow(0 28px 44px rgba(31, 75, 63, 0.14));
-  transition: transform 450ms cubic-bezier(0.22, 1, 0.36, 1);
+  filter: drop-shadow(0 28px 44px rgba(31, 75, 63, 0.16)) drop-shadow(0 4px 12px rgba(217, 140, 43, 0.12));
+  transition: 
+    transform 550ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 550ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .accueilProducts-item:hover .accueilProducts-image,
 .accueilProducts-item:focus-within .accueilProducts-image {
-  transform: translateY(-8px) scale(1.02);
+  transform: translateY(-12px) scale(1.06) rotate(2deg);
+  filter: 
+    drop-shadow(0 36px 56px rgba(31, 75, 63, 0.24)) 
+    drop-shadow(0 8px 20px rgba(217, 140, 43, 0.20));
 }
 
 .accueilProducts-copy {
   display: grid;
   align-content: center;
   gap: 1.2rem;
+  position: relative;
+}
+
+.accueilProducts-copy::before {
+  content: '';
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+  width: 3px;
+  height: 0;
+  background: linear-gradient(180deg, var(--color-accent-600), transparent);
+  border-radius: 2px;
+  transition: height 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.accueilProducts-item:hover .accueilProducts-copy::before {
+  height: 4rem;
 }
 
 .accueilProducts-badge {
@@ -504,11 +721,19 @@
   min-height: 2.5rem;
   padding: 0.625rem 1.125rem;
   border-radius: var(--radius-pill);
-  background: #e9dfc8;
+  background: linear-gradient(135deg, #e9dfc8 0%, #f4e7c8 100%);
   color: var(--color-primary-800);
   font-family: var(--font-heading);
   font-size: 0.82rem;
   font-weight: 600;
+  box-shadow: 0 2px 8px rgba(217, 140, 43, 0.12);
+  transition: all 400ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.accueilProducts-item:hover .accueilProducts-badge {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(217, 140, 43, 0.20);
+  background: linear-gradient(135deg, #f4e7c8 0%, #e9dfc8 100%);
 }
 
 .accueilProducts-title,
@@ -517,6 +742,28 @@
   color: var(--color-ink-900);
   font-size: clamp(2rem, 6vw, 2.625rem);
   font-weight: 600;
+  position: relative;
+  display: inline-block;
+}
+
+.accueilProducts-title::before,
+.accueilBenefits-title::before {
+  content: '';
+  position: absolute;
+  top: -0.35rem;
+  left: -0.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: radial-gradient(circle, rgba(242, 178, 51, 0.2), transparent 70%);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 500ms ease;
+}
+
+.accueilProducts-item:hover .accueilProducts-title::before,
+.accueilBenefits-item:hover .accueilBenefits-title::before {
+  opacity: 1;
+  animation: accueilTitleDotPulse 2s ease-in-out infinite;
 }
 
 .accueilProducts-description,
@@ -538,7 +785,12 @@
   gap: 1.3rem;
   align-items: start;
   padding: 0 0 1rem;
-  animation: accueilRevealEditorial 700ms ease both;
+  animation: accueilRevealEditorial 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  transition: transform 450ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.accueilBenefits-item:hover {
+  transform: translateX(8px);
 }
 
 .accueilBenefits-item:nth-child(2) {
@@ -567,14 +819,19 @@
   left: 0;
   bottom: 0;
   width: 3.25rem;
-  height: 1px;
-  background: linear-gradient(90deg, rgba(31, 94, 59, 0.28), rgba(31, 94, 59, 0));
-  transition: width 500ms ease;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(217, 140, 43, 0.42), rgba(31, 94, 59, 0.28), rgba(31, 94, 59, 0));
+  transition: 
+    width 600ms cubic-bezier(0.22, 1, 0.36, 1),
+    background 600ms ease;
+  box-shadow: 0 0 8px rgba(217, 140, 43, 0.2);
 }
 
 .accueilBenefits-item:hover::after,
 .accueilBenefits-item:focus-within::after {
-  width: 6.5rem;
+  width: 8rem;
+  background: linear-gradient(90deg, rgba(242, 178, 51, 0.62), rgba(217, 140, 43, 0.42), rgba(31, 94, 59, 0.18), rgba(31, 94, 59, 0));
+  box-shadow: 0 0 12px rgba(242, 178, 51, 0.32);
 }
 
 .accueilBenefits-index {
@@ -584,6 +841,21 @@
   font-size: clamp(4.5rem, 12vw, 7.5rem);
   font-weight: 700;
   line-height: 0.9;
+  transition: 
+    color 500ms ease,
+    transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+  background: linear-gradient(135deg, rgba(31, 94, 59, 0.1), rgba(217, 140, 43, 0.06));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.accueilBenefits-item:hover .accueilBenefits-index {
+  transform: scale(1.05) translateY(-4px);
+  background: linear-gradient(135deg, rgba(217, 140, 43, 0.16), rgba(31, 94, 59, 0.12));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .accueilBenefits-copy {
@@ -596,10 +868,23 @@
   padding-block: 5rem;
   overflow: clip;
   background:
-    radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.08), transparent 18%),
-    radial-gradient(circle at 82% 28%, rgba(242, 178, 51, 0.1), transparent 22%),
-    linear-gradient(180deg, #1f4b3f 0%, #183d34 100%);
-  color: rgba(255, 255, 255, 0.9);
+    radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.10), transparent 20%),
+    radial-gradient(circle at 82% 28%, rgba(242, 178, 51, 0.14), transparent 26%),
+    radial-gradient(circle at 50% 80%, rgba(31, 94, 59, 0.08), transparent 28%),
+    linear-gradient(135deg, #1f5e3b 0%, #1f4b3f 50%, #183d34 100%);
+  color: rgba(255, 255, 255, 0.92);
+  animation: accueilPresenceBackgroundShift 25s ease-in-out infinite alternate;
+}
+
+.accueilPresence-root::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 25% 45%, rgba(242, 178, 51, 0.06), transparent 35%),
+    radial-gradient(circle at 75% 65%, rgba(255, 255, 255, 0.04), transparent 30%);
+  animation: accueilPresenceOverlayPulse 12s ease-in-out infinite;
+  pointer-events: none;
 }
 
 .accueilPresence-root .accueilSection-eyebrow,
@@ -625,7 +910,12 @@
   display: grid;
   gap: 0.85rem;
   padding: 0;
-  animation: accueilRevealEditorial 700ms ease both;
+  animation: accueilRevealEditorial 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.accueilPresence-stat:hover {
+  transform: translateY(-6px) scale(1.02);
 }
 
 .accueilPresence-stat:nth-child(2) {
@@ -645,6 +935,19 @@
   font-size: clamp(2.8rem, 10vw, 4.5rem);
   font-weight: 700;
   line-height: 0.95;
+  background: linear-gradient(135deg, #ffffff 0%, #f2b233 50%, #ffffff 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: accueilPresenceValueShine 6s ease-in-out infinite;
+  text-shadow: 0 4px 24px rgba(242, 178, 51, 0.3);
+  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.accueilPresence-stat:hover .accueilPresence-value {
+  transform: scale(1.08);
+  animation-duration: 3s;
 }
 
 .accueilPresence-testimonials {
@@ -693,18 +996,33 @@
   border-radius: 2rem;
   overflow: hidden;
   background:
-    radial-gradient(circle at 50% 60%, rgba(242, 178, 51, 0.18), transparent 22%),
-    linear-gradient(135deg, #1f5e3b 0%, #163824 100%);
-  animation: accueilRevealSoft 700ms ease both;
+    radial-gradient(circle at 50% 60%, rgba(242, 178, 51, 0.22), transparent 26%),
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.06), transparent 20%),
+    linear-gradient(135deg, #1f5e3b 0%, #1a4d35 50%, #163824 100%);
+  animation: accueilRevealSoft 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
   will-change: transform, opacity;
+  transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 
+    0 24px 48px rgba(31, 94, 59, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.accueilInvestors-panel:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 
+    0 32px 64px rgba(31, 94, 59, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
 .accueilInvestors-panel::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 38%);
+  background: 
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 42%),
+    radial-gradient(circle at 50% 50%, rgba(242, 178, 51, 0.08), transparent 60%);
   pointer-events: none;
+  animation: accueilInvestorShimmer 8s ease-in-out infinite;
 }
 
 .accueilFaq-groups {
@@ -723,13 +1041,18 @@
 }
 
 .accueilFaq-item {
-  border-bottom: 1px solid rgba(31, 94, 59, 0.12);
-  transition: opacity 320ms ease;
+  border-bottom: 1px solid rgba(31, 94, 59, 0.14);
+  transition: 
+    opacity 350ms ease,
+    background-color 350ms ease,
+    transform 350ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .accueilFaq-item:hover,
 .accueilFaq-item:focus-within {
-  opacity: 0.88;
+  opacity: 1;
+  background-color: rgba(244, 231, 200, 0.04);
+  transform: translateX(4px);
 }
 
 .accueilFaq-trigger {
@@ -740,6 +1063,11 @@
   gap: 1rem;
   padding: 1.75rem 0;
   text-align: left;
+  transition: padding-left 350ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.accueilFaq-item:hover .accueilFaq-trigger {
+  padding-left: 0.5rem;
 }
 
 .accueilFaq-question {
@@ -754,6 +1082,18 @@
   font-family: var(--font-heading);
   font-size: 1.4rem;
   line-height: 1;
+  transition: 
+    transform 400ms cubic-bezier(0.22, 1, 0.36, 1),
+    color 400ms ease;
+}
+
+.accueilFaq-item--open .accueilFaq-icon {
+  transform: rotate(180deg);
+  color: var(--color-accent-500);
+}
+
+.accueilFaq-item:hover .accueilFaq-icon {
+  transform: scale(1.15);
 }
 
 .accueilFaq-answerWrap {
@@ -793,9 +1133,10 @@
   border-radius: 0;
   overflow: clip;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.32), rgba(255, 255, 255, 0)),
-    radial-gradient(circle at 50% 72%, rgba(217, 140, 43, 0.16), transparent 24%);
-  animation: accueilRevealEditorial 700ms ease both;
+    linear-gradient(180deg, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0)),
+    radial-gradient(circle at 50% 72%, rgba(217, 140, 43, 0.20), transparent 28%),
+    radial-gradient(circle at 30% 40%, rgba(242, 178, 51, 0.12), transparent 32%);
+  animation: accueilRevealEditorial 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .accueilFinal-panel::before {
@@ -803,13 +1144,23 @@
   position: absolute;
   left: 50%;
   bottom: 12%;
-  width: min(30rem, 74vw);
-  height: min(30rem, 74vw);
+  width: min(32rem, 80vw);
+  height: min(32rem, 80vw);
   border-radius: 50%;
-  background: rgba(242, 178, 51, 0.14);
-  filter: blur(56px);
+  background: radial-gradient(circle, rgba(242, 178, 51, 0.18), rgba(217, 140, 43, 0.08) 60%, transparent 80%);
+  filter: blur(64px);
   transform: translateX(-50%);
-  animation: accueilDrift 15s ease-in-out infinite;
+  animation: accueilDriftEnhanced 18s ease-in-out infinite;
+}
+
+.accueilFinal-panel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.08), transparent 50%),
+    linear-gradient(180deg, transparent 50%, rgba(31, 94, 59, 0.04) 100%);
+  pointer-events: none;
 }
 
 .accueilFinal-panel > * {
@@ -872,6 +1223,36 @@
   background:
     radial-gradient(circle at 15% 20%, rgba(31, 94, 59, 0.04), transparent 16%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.24), transparent 100%);
+  overflow: hidden;
+}
+
+.accueilBenefits-root::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  right: -5%;
+  width: 25rem;
+  height: 25rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(242, 178, 51, 0.08), transparent 70%);
+  filter: blur(60px);
+  animation: accueilDriftEnhanced 22s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.accueilBenefits-root::after {
+  content: '';
+  position: absolute;
+  bottom: 15%;
+  left: -8%;
+  width: 22rem;
+  height: 22rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(31, 94, 59, 0.06), transparent 70%);
+  filter: blur(55px);
+  animation: accueilDriftEnhanced 20s ease-in-out infinite reverse;
+  animation-delay: -8s;
+  pointer-events: none;
 }
 
 .accueilBenefits-heading .accueilSection-title {
@@ -897,7 +1278,30 @@
 }
 
 .accueilFaq-root {
-  background: rgba(255, 255, 255, 0.12);
+  background: 
+    radial-gradient(circle at 82% 15%, rgba(242, 178, 51, 0.06), transparent 22%),
+    radial-gradient(circle at 18% 75%, rgba(31, 94, 59, 0.05), transparent 20%),
+    rgba(255, 255, 255, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.accueilFaq-root::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(circle at 25% 20%, rgba(217, 140, 43, 0.15) 0%, transparent 2px),
+    radial-gradient(circle at 65% 35%, rgba(31, 94, 59, 0.18) 0%, transparent 2.5px),
+    radial-gradient(circle at 85% 65%, rgba(242, 178, 51, 0.16) 0%, transparent 2px),
+    radial-gradient(circle at 40% 80%, rgba(31, 94, 59, 0.14) 0%, transparent 2.5px);
+  background-size: 100% 100%;
+  opacity: 0.4;
+  animation: accueilFaqParticlesDrift 50s linear infinite;
+  pointer-events: none;
 }
 
 .accueilFaq-shell {
@@ -916,6 +1320,116 @@
 
 .accueilFinal-root {
   background: #f6f1e7;
+  position: relative;
+  overflow: hidden;
+}
+
+.accueilFinal-root::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(circle at 15% 25%, rgba(31, 94, 59, 0.04) 0%, transparent 1.5px),
+    radial-gradient(circle at 35% 15%, rgba(217, 140, 43, 0.06) 0%, transparent 2px),
+    radial-gradient(circle at 60% 30%, rgba(242, 178, 51, 0.05) 0%, transparent 1.5px),
+    radial-gradient(circle at 80% 20%, rgba(31, 94, 59, 0.05) 0%, transparent 2px),
+    radial-gradient(circle at 25% 70%, rgba(217, 140, 43, 0.05) 0%, transparent 1.5px),
+    radial-gradient(circle at 70% 75%, rgba(242, 178, 51, 0.06) 0%, transparent 2px),
+    radial-gradient(circle at 90% 80%, rgba(31, 94, 59, 0.04) 0%, transparent 1.5px);
+  background-size: 100% 100%;
+  opacity: 0.6;
+  animation: accueilFinalParticleFloat 55s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes accueilHeroBackgroundShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes accueilHeroBackdropPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+@keyframes accueilHeroGridMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(40px, 40px);
+  }
+}
+
+@keyframes accueilHeroMediaGlow {
+  0% {
+    filter: blur(32px);
+    opacity: 0.9;
+  }
+  100% {
+    filter: blur(44px);
+    opacity: 1;
+  }
+}
+
+@keyframes accueilHeroContentGlow {
+  0% {
+    filter: blur(40px);
+    transform: scale(1);
+  }
+  100% {
+    filter: blur(52px);
+    transform: scale(1.08);
+  }
+}
+
+@keyframes accueilHeroContentRing {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: rotate(360deg) scale(1.1);
+    opacity: 0.3;
+  }
+}
+
+@keyframes accueilHeroTitleShine {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes accueilButtonPulse {
+  0%, 100% {
+    box-shadow: 
+      0 24px 48px rgba(242, 178, 51, 0.42),
+      0 8px 20px rgba(217, 140, 43, 0.32),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 
+      0 28px 56px rgba(242, 178, 51, 0.52),
+      0 10px 24px rgba(217, 140, 43, 0.38),
+      inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  }
 }
 
 @keyframes accueilRevealUp {
@@ -994,28 +1508,33 @@
 }
 
 @keyframes accueilHeroFloat {
-  0%,
-  100% {
-    transform: translateY(0) scale(1);
+  0%, 100% {
+    transform: translateY(0) scale(1) rotate(0deg);
   }
-
-  50% {
-    transform: translateY(-14px) scale(1.018);
+  33% {
+    transform: translateY(-16px) scale(1.02) rotate(1deg);
+  }
+  66% {
+    transform: translateY(-8px) scale(0.99) rotate(-0.5deg);
   }
 }
 
 @keyframes accueilHeroDrift {
-  0%,
-  100% {
+  0%, 100% {
     transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.82;
   }
-
-  33% {
-    transform: translate3d(8px, -14px, 0) scale(1.06);
+  25% {
+    transform: translate3d(12px, -18px, 0) scale(1.08);
+    opacity: 0.9;
   }
-
-  66% {
-    transform: translate3d(-5px, -6px, 0) scale(0.96);
+  50% {
+    transform: translate3d(-8px, -12px, 0) scale(1.04);
+    opacity: 0.95;
+  }
+  75% {
+    transform: translate3d(-6px, 10px, 0) scale(0.96);
+    opacity: 0.88;
   }
 }
 
@@ -1027,6 +1546,137 @@
 
   50% {
     transform: translate3d(0, -14px, 0);
+  }
+}
+
+@keyframes accueilDriftEnhanced {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+  }
+  33% {
+    transform: translate3d(12px, -20px, 0) scale(1.06);
+    opacity: 0.92;
+  }
+  66% {
+    transform: translate3d(-10px, -16px, 0) scale(0.98);
+    opacity: 0.88;
+  }
+}
+
+@keyframes accueilPresenceBackgroundShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes accueilPresenceOverlayPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes accueilPresenceValueShine {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes accueilInvestorShimmer {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+@keyframes accueilHeroParticleFloat {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(10px, -15px);
+  }
+  50% {
+    transform: translate(-5px, -25px);
+  }
+  75% {
+    transform: translate(-12px, -10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes accueilAboutMediaShine {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(50%, 50%) rotate(45deg);
+  }
+}
+
+@keyframes accueilFaqParticlesDrift {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(15px, -20px) scale(1.05);
+  }
+  66% {
+    transform: translate(-10px, -15px) scale(0.98);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes accueilEyebrowShimmer {
+  0% {
+    left: -100%;
+  }
+  50%, 100% {
+    left: 100%;
+  }
+}
+
+@keyframes accueilFinalParticleFloat {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(12px, -18px) rotate(90deg);
+  }
+  50% {
+    transform: translate(-8px, -30px) rotate(180deg);
+  }
+  75% {
+    transform: translate(-15px, -12px) rotate(270deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+@keyframes accueilTitleDotPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 1;
   }
 }
 
