@@ -25,12 +25,10 @@
   padding: clamp(4.5rem, 8vw, 7rem) min(6vw, 5rem) clamp(3.5rem, 7vw, 5rem);
   overflow: hidden;
   background:
-    radial-gradient(circle at 50% 46%, rgba(246, 241, 231, 0.98) 0%, rgba(244, 231, 200, 0.95) 20%, rgba(244, 231, 200, 0.56) 34%, rgba(31, 94, 59, 0) 58%),
-    radial-gradient(circle at 14% 18%, rgba(217, 140, 43, 0.22), transparent 28%),
-    radial-gradient(circle at 84% 18%, rgba(23, 50, 77, 0.26), transparent 30%),
-    radial-gradient(circle at 72% 88%, rgba(242, 178, 51, 0.18), transparent 24%),
-    radial-gradient(circle at 25% 85%, rgba(31, 94, 59, 0.12), transparent 22%),
-    linear-gradient(125deg, #f6f1e7 0%, #e9dfc8 28%, #d4c5a0 48%, #1f5e3b 78%, #17324d 100%);
+    radial-gradient(circle at 50% 60%, rgba(242, 178, 51, 0.22), transparent 26%),
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.06), transparent 20%),
+    radial-gradient(circle at 80% 70%, rgba(217, 140, 43, 0.12), transparent 24%),
+    linear-gradient(135deg, #1f5e3b 0%, #1a4d35 50%, #163824 100%);
   isolation: isolate;
   animation: accueilHeroBackgroundShift 20s ease-in-out infinite alternate;
 }
@@ -187,9 +185,9 @@
     height: 100%;
     background: linear-gradient(
         to bottom,
-        rgba(26, 26, 26, 0.28) 0%,
-        rgba(26, 26, 26, 0.62) 55%,
-        rgba(26, 26, 26, 0.80) 100%
+        rgba(22, 56, 36, 0.2) 0%,
+        rgba(22, 56, 36, 0.35) 55%,
+        rgba(22, 56, 36, 0.5) 100%
     );
 }
 
@@ -204,7 +202,7 @@
   margin: 0 auto;
   padding: clamp(2rem, 5vw, 3rem) clamp(1rem, 3vw, 2rem);
   text-align: center;
-  color: var(--color-primary-900);
+  color: var(--color-white);
   animation: accueilHeroTextReveal 1200ms cubic-bezier(0.22, 1, 0.36, 1) both;
   animation-delay: 80ms;
 }
@@ -215,8 +213,8 @@
   inset: -18% -14%;
   border-radius: 50%;
   background: 
-    radial-gradient(circle, rgba(246, 241, 231, 0.92), rgba(246, 241, 231, 0.48) 52%, transparent 78%),
-    radial-gradient(circle at 65% 35%, rgba(242, 178, 51, 0.08), transparent 48%);
+    radial-gradient(circle, rgba(31, 94, 59, 0.4), rgba(31, 94, 59, 0.2) 52%, transparent 78%),
+    radial-gradient(circle at 65% 35%, rgba(242, 178, 51, 0.12), transparent 48%);
   filter: blur(40px);
   z-index: -1;
   animation: accueilHeroContentGlow 10s ease-in-out infinite alternate;
@@ -227,7 +225,7 @@
   position: absolute;
   inset: -8% -10%;
   border-radius: 50%;
-  border: 1px solid rgba(217, 140, 43, 0.12);
+  border: 1px solid rgba(242, 178, 51, 0.2);
   animation: accueilHeroContentRing 12s linear infinite;
 }
 
@@ -239,8 +237,8 @@
   min-height: 2rem;
   padding-inline: 0.9rem;
   border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.09);
-  color: rgba(255, 255, 255, 0.86);
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.9);
   font-family: var(--font-heading);
   font-size: 0.78rem;
   font-weight: 600;
@@ -272,17 +270,17 @@
 }
 
 .accueilHero-title {
-  color: var(--color-primary-900);
+  color: var(--color-white);
   font-size: clamp(3.25rem, 9vw, 5.75rem);
   font-weight: 800;
   letter-spacing: -0.05em;
   line-height: 0.96;
   text-shadow:
-    0 3px 40px rgba(31, 75, 63, 0.16),
-    0 1px 12px rgba(217, 140, 43, 0.12),
-    0 0 100px rgba(242, 178, 51, 0.08);
+    0 3px 40px rgba(31, 94, 59, 0.6),
+    0 1px 12px rgba(217, 140, 43, 0.3),
+    0 0 100px rgba(242, 178, 51, 0.2);
   animation: accueilHeroTitleShine 8s ease-in-out infinite;
-  background: linear-gradient(135deg, #1f5e3b 0%, #2d7a52 30%, #d98c2b 50%, #2d7a52 70%, #1f5e3b 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #f2b233 30%, #ffffff 50%, #f2b233 70%, #ffffff 100%);
   background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -302,7 +300,7 @@
 
 .accueilHero-description {
   max-width: 38.75rem;
-  color: var(--color-ink-900);
+  color: rgba(255, 255, 255, 0.92);
   font-size: clamp(1rem, 1.4vw, 1.125rem);
 }
 
@@ -411,15 +409,16 @@
 }
 
 .accueilHero-actions .accueilButton--secondary {
-  border-color: rgba(31, 75, 63, 0.25);
-  color: #1f4b3f;
-  background: rgba(246, 241, 231, 0.38);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: var(--color-white);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
 }
 
 .accueilHero-actions .accueilButton--secondary:hover,
 .accueilHero-actions .accueilButton--secondary:focus-visible {
-  background: rgba(246, 241, 231, 0.56);
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 .accueilAbout-root,
