@@ -31,14 +31,6 @@
   isolation: isolate;
 }
 
-.accueilHero-stage::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(31, 94, 59, 0.75) 0%, rgba(26, 77, 53, 0.8) 50%, rgba(22, 56, 36, 0.85) 100%);
-  z-index: 0;
-}
-
 .accueilHero-backdrop,
 .accueilHero-glow {
   position: absolute;
